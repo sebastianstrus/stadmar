@@ -4,165 +4,186 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StädMar – Städservice i Göteborg</title>
-<meta name="description" content="StädMar – professionell städservice i Göteborg och omnejd. Hemstädning, flyttstädning, kontorsstädning, storstädning, byggstädning och fönsterputs. RUT-avdrag.">
+<meta name="description" content="StädMar – professionell städservice i Göteborg och omnejd sedan 16 år. Hemstädning, flyttstädning, kontorsstädning, storstädning, byggstädning och fönsterputs. RUT-avdrag.">
+<meta property="og:title" content="StädMar – Städservice i Göteborg">
+<meta property="og:description" content="Professionell städning för hem och företag i Göteborg och omnejd. RUT-avdrag 50 %.">
+<meta property="og:image" content="images/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/hero.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M6 34 32 12l26 22' fill='none' stroke='%230f1f3d' stroke-width='6' stroke-linecap='round'/%3E%3Crect x='25' y='28' width='14' height='14' fill='%23c9a24a'/%3E%3C/svg%3E">
 <style>
   :root{
     --navy:#0d1b36; --navy-2:#13264a; --navy-3:#1b3260;
     --gold:#c9a24a; --gold-2:#e3c578; --gold-3:#a8832f;
-    --ink:#0d1b36; --muted:#5b6478; --line:#e7e3d8;
-    --cream:#faf8f3; --white:#fff;
-    --gold-grad:linear-gradient(135deg,#e8cd84 0%,#c9a24a 45%,#a8832f 100%);
-    --radius:18px; --shadow:0 20px 50px -20px rgba(13,27,54,.25);
+    --ink:#0d1b36; --muted:#5b6478; --line:#ebe6da;
+    --cream:#faf7f1; --sand:#f4efe4; --white:#fff;
+    --gold-grad:linear-gradient(135deg,#ecd291 0%,#c9a24a 48%,#a8832f 100%);
+    --radius:18px; --shadow:0 22px 50px -22px rgba(13,27,54,.28); --shadow-sm:0 8px 24px -12px rgba(13,27,54,.18);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
   h1,h2,h3,.brand{font-family:Poppins,sans-serif;line-height:1.15}
   a{color:inherit;text-decoration:none}
-  .container{width:min(1180px,100% - 40px);margin-inline:auto}
+  img{display:block;max-width:100%}
+  .container{width:min(1200px,100% - 40px);margin-inline:auto}
   .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-3)}
   .eyebrow::before{content:"";width:34px;height:1.5px;background:var(--gold)}
-  .section{padding:110px 0}
-  .section-head{max-width:640px;margin-bottom:56px}
-  .section-head h2{font-size:clamp(2rem,4vw,2.8rem);margin:14px 0 16px;letter-spacing:-.02em}
+  .center .eyebrow::after{content:"";width:34px;height:1.5px;background:var(--gold)}
+  .section{padding:100px 0}
+  .section-head{max-width:660px;margin-bottom:52px}
+  .section-head h2{font-size:clamp(2rem,4vw,2.7rem);margin:14px 0 14px;letter-spacing:-.02em}
   .section-head p{color:var(--muted);font-size:1.06rem}
   .center{text-align:center;margin-inline:auto}
-  .center .eyebrow::after{content:"";width:34px;height:1.5px;background:var(--gold)}
   .gold-text{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
   /* Buttons */
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:600;font-size:.97rem;transition:.25s;cursor:pointer;border:0;font-family:inherit}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:600;font-size:.96rem;transition:.25s;cursor:pointer;border:0;font-family:inherit;white-space:nowrap}
   .btn-gold{background:var(--gold-grad);color:var(--navy);box-shadow:0 10px 30px -10px rgba(201,162,74,.7)}
-  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px rgba(201,162,74,.85)}
-  .btn-ghost{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px rgba(201,162,74,.9)}
+  .btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff;backdrop-filter:blur(4px);background:rgba(255,255,255,.06)}
   .btn-ghost:hover{border-color:var(--gold-2);color:var(--gold-2)}
+  .btn-outline{border:1.5px solid var(--navy);color:var(--navy)}
+  .btn-outline:hover{background:var(--navy);color:#fff}
   .btn svg{width:18px;height:18px}
 
   /* Header */
-  header{position:fixed;inset:0 0 auto;z-index:50;transition:.3s}
-  header.scrolled{background:rgba(13,27,54,.92);backdrop-filter:blur(14px);box-shadow:0 8px 30px -12px rgba(0,0,0,.4)}
+  header{position:fixed;inset:0 0 auto;z-index:50;transition:.3s;background:linear-gradient(180deg,rgba(13,27,54,.75),rgba(13,27,54,0))}
+  header.scrolled{background:rgba(13,27,54,.95);backdrop-filter:blur(14px);box-shadow:0 8px 30px -12px rgba(0,0,0,.4)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:84px;transition:.3s}
   header.scrolled .nav{height:70px}
   .brand{display:flex;align-items:center;gap:12px;font-size:1.55rem;font-weight:800;color:#fff;letter-spacing:-.02em}
   .brand svg{width:42px;height:42px}
   .brand .mar{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .nav-links{display:flex;gap:34px;font-size:.93rem;font-weight:500;color:rgba(255,255,255,.82)}
+  .nav-links{display:flex;gap:34px;font-size:.93rem;font-weight:500;color:rgba(255,255,255,.88)}
   .nav-links a{position:relative;padding:6px 0}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--gold);transition:.25s}
   .nav-links a:hover{color:#fff}.nav-links a:hover::after{width:100%}
   .nav-right{display:flex;align-items:center;gap:16px}
-  .lang{display:flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:3px}
-  .lang button{background:none;border:0;color:rgba(255,255,255,.7);font:600 .78rem Inter,sans-serif;padding:7px 12px;border-radius:999px;cursor:pointer;letter-spacing:.06em;transition:.2s}
+  .lang{display:flex;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:3px}
+  .lang button{background:none;border:0;color:rgba(255,255,255,.75);font:600 .78rem Inter,sans-serif;padding:7px 12px;border-radius:999px;cursor:pointer;letter-spacing:.06em;transition:.2s}
   .lang button.active{background:var(--gold-grad);color:var(--navy)}
   .nav .btn{padding:11px 20px;font-size:.88rem}
   .burger{display:none;background:none;border:0;color:#fff;cursor:pointer}
   .burger svg{width:28px;height:28px}
 
   /* Hero */
-  .hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden;
-    background:radial-gradient(ellipse at 75% 20%,#1f3a6e 0%,transparent 55%),linear-gradient(180deg,#0a1630 0%,#0d1b36 55%,#13264a 100%)}
-  .stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20% 30%,#fff9,transparent),radial-gradient(1px 1px at 60% 15%,#fff7,transparent),radial-gradient(1.5px 1.5px at 85% 25%,#fffa,transparent),radial-gradient(1px 1px at 40% 10%,#fff6,transparent),radial-gradient(1px 1px at 70% 40%,#fff5,transparent),radial-gradient(1px 1px at 10% 12%,#fff6,transparent);opacity:.7}
-  .skyline{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto;opacity:.95;pointer-events:none}
-  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center;padding:140px 0 200px}
+  .hero{position:relative;min-height:min(92vh,860px);display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--navy)}
+  .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%;animation:zoom 18s ease-out both}
+  @keyframes zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+  .hero::before{content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(90deg,rgba(10,22,48,.94) 0%,rgba(13,27,54,.85) 32%,rgba(13,27,54,.45) 58%,rgba(13,27,54,.05) 82%)}
+  .hero-inner{position:relative;z-index:2;padding:150px 0 120px;max-width:720px}
   .hero .eyebrow{color:var(--gold-2)}
-  .hero h1{font-size:clamp(2.4rem,5vw,3.9rem);font-weight:700;letter-spacing:-.03em;margin:22px 0 24px}
-  .hero p.lead{font-size:1.16rem;color:rgba(255,255,255,.78);max-width:540px;margin-bottom:38px}
+  .hero h1{font-size:clamp(2.4rem,5vw,3.9rem);font-weight:700;letter-spacing:-.03em;margin:22px 0 22px}
+  .hero p.lead{font-size:1.14rem;color:rgba(255,255,255,.85);max-width:520px;margin-bottom:36px}
   .hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
-  .hero-stats{display:flex;gap:44px;margin-top:56px;padding-top:30px;border-top:1px solid rgba(255,255,255,.12)}
-  .hero-stats strong{display:block;font:700 1.9rem Poppins,sans-serif}
-  .hero-stats span{font-size:.85rem;color:rgba(255,255,255,.6)}
-  .rut-badge{justify-self:center;width:250px;height:250px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;text-align:center;color:#fff;position:relative;
-    box-shadow:0 0 0 10px rgba(201,162,74,.15),0 0 0 22px rgba(201,162,74,.07),0 30px 80px -20px rgba(201,162,74,.6);animation:float 6s ease-in-out infinite}
-  .rut-badge::before{content:"";position:absolute;inset:12px;border-radius:50%;border:1.5px solid rgba(255,255,255,.45)}
-  .rut-badge b{font:800 2.5rem/1 Poppins,sans-serif;display:block;text-shadow:0 2px 10px rgba(0,0,0,.15)}
-  .rut-badge small{display:block;font:600 1.05rem Poppins,sans-serif;margin-top:6px}
-  .rut-badge em{display:block;font-style:normal;font-size:.8rem;opacity:.9;margin-top:8px;letter-spacing:.1em;text-transform:uppercase}
-  @keyframes float{50%{transform:translateY(-12px)}}
 
-  /* Trust bar */
-  .trust{background:var(--cream);border-bottom:1px solid var(--line)}
-  .trust .container{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:34px 0}
-  .trust-item{display:flex;align-items:center;gap:14px;font-weight:600;font-size:.95rem}
-  .trust-item .ic{flex:none;width:44px;height:44px;border-radius:12px;background:var(--navy);display:grid;place-items:center}
-  .trust-item svg{width:22px;height:22px;stroke:var(--gold-2)}
+  /* Stats bar */
+  .stats{background:var(--navy);color:#fff;position:relative;z-index:3}
+  .stats .container{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{display:flex;align-items:center;gap:16px;padding:30px 24px}
+  .stat + .stat{border-left:1px solid rgba(255,255,255,.12)}
+  .stat svg{flex:none;width:34px;height:34px;stroke:var(--gold-2)}
+  .stat strong{display:block;font:700 1.6rem/1.1 Poppins,sans-serif}
+  .stat span{font-size:.86rem;color:rgba(255,255,255,.65)}
 
   /* Services */
+  .services{background:var(--cream)}
   .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:38px 32px;transition:.35s;position:relative;overflow:hidden}
-  .card::after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--gold-grad);transition:.4s}
-  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
-  .card:hover::after{width:100%}
-  .card .ic{width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,var(--navy),var(--navy-3));display:grid;place-items:center;margin-bottom:24px}
-  .card .ic svg{width:28px;height:28px;stroke:var(--gold-2)}
-  .card h3{font-size:1.28rem;margin-bottom:10px}
-  .card p{color:var(--muted);font-size:.97rem}
+  .card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:.35s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .card .img{aspect-ratio:3/2;overflow:hidden}
+  .card .img img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+  .card:hover .img img{transform:scale(1.06)}
+  .card .body{display:flex;gap:16px;align-items:flex-start;padding:24px 24px 26px;flex:1}
+  .card .ic{flex:none;width:46px;height:46px;border-radius:12px;background:var(--sand);display:grid;place-items:center}
+  .card .ic svg{width:24px;height:24px;stroke:var(--navy)}
+  .card h3{font-size:1.18rem;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:.93rem}
+  .card .txt{flex:1}
+  .card .go{flex:none;align-self:center;width:34px;height:34px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;transition:.3s}
+  .card .go svg{width:16px;height:16px;stroke:var(--navy)}
+  .card:hover .go{transform:translateX(4px)}
+
+  /* Trust strip */
+  .trust{background:var(--sand)}
+  .trust .container{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:30px 0}
+  .trust-item{display:flex;align-items:center;gap:14px;font-weight:600;font-size:.95rem;justify-content:center}
+  .trust-item svg{flex:none;width:34px;height:34px;stroke:var(--gold-3)}
 
   /* Why */
-  .why{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-  .why::before{content:"";position:absolute;right:-200px;top:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,74,.18),transparent 65%)}
-  .why .section-head p{color:rgba(255,255,255,.7)}
-  .why .eyebrow{color:var(--gold-2)}
-  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative}
-  .features{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  .feature{padding:28px;border-radius:var(--radius);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);transition:.3s}
-  .feature:hover{background:rgba(255,255,255,.07);border-color:rgba(201,162,74,.4)}
-  .feature .num{font:700 .85rem Poppins,sans-serif;color:var(--gold);letter-spacing:.1em}
-  .feature h3{font-size:1.1rem;margin:10px 0 8px}
-  .feature p{font-size:.92rem;color:rgba(255,255,255,.65)}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .why-media{position:relative}
+  .why-media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;box-shadow:var(--shadow)}
+  .why-badge{position:absolute;right:-24px;bottom:40px;background:var(--navy);color:#fff;border-radius:20px;padding:22px 26px;box-shadow:var(--shadow);display:flex;align-items:center;gap:16px}
+  .why-badge b{font:800 2.4rem/1 Poppins,sans-serif;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .why-badge span{font-size:.9rem;line-height:1.35;color:rgba(255,255,255,.8)}
+  .features{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+  .feature{padding:22px;border-radius:16px;background:var(--cream);border:1px solid var(--line);transition:.3s}
+  .feature:hover{border-color:var(--gold);background:#fff;box-shadow:var(--shadow-sm)}
+  .feature .num{font:700 .8rem Poppins,sans-serif;color:var(--gold-3);letter-spacing:.1em}
+  .feature h3{font-size:1.05rem;margin:8px 0 6px}
+  .feature p{font-size:.9rem;color:var(--muted)}
 
-  /* RUT */
-  .rut{background:var(--cream)}
-  .rut-box{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);background:#fff}
-  .rut-text{padding:64px 56px}
-  .rut-text h2{font-size:clamp(1.8rem,3.4vw,2.5rem);margin:14px 0 18px;letter-spacing:-.02em}
-  .rut-text p{color:var(--muted);margin-bottom:14px}
-  .rut-calc{background:linear-gradient(160deg,var(--navy),var(--navy-3));color:#fff;padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
-  .rut-calc .row{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:1rem}
-  .rut-calc .row span:last-child{font-weight:600}
-  .rut-calc .row.total{border:0;padding-top:24px;font:700 1.4rem Poppins,sans-serif}
+  /* RUT banner */
+  .rut-wrap{padding:0 0 100px}
+  .rut-banner{position:relative;background:linear-gradient(120deg,var(--navy) 0%,var(--navy-3) 100%);color:#fff;border-radius:28px;padding:48px 56px 48px 230px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;overflow:hidden}
+  .rut-banner::after{content:"";position:absolute;right:-120px;top:-120px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,74,.22),transparent 65%)}
+  .coin{position:absolute;left:44px;top:50%;transform:translateY(-50%);width:150px;height:150px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;text-align:center;color:#fff;box-shadow:0 0 0 8px rgba(201,162,74,.18),0 20px 40px -12px rgba(0,0,0,.5)}
+  .coin::before{content:"";position:absolute;inset:9px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5)}
+  .coin b{font:800 1.9rem/1 Poppins,sans-serif;display:block}
+  .coin small{display:block;font:600 .9rem Poppins,sans-serif;margin-top:3px}
+  .coin em{display:block;font:800 1.5rem/1 Poppins,sans-serif;font-style:normal;margin-top:4px}
+  .rut-banner h2{font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:10px}
+  .rut-banner p{color:rgba(255,255,255,.75);font-size:.98rem}
+  .rut-calc{position:relative;z-index:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px 26px}
+  .rut-calc .row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.95rem}
+  .rut-calc .row.total{border:0;font:700 1.25rem Poppins,sans-serif;padding-top:14px}
   .rut-calc .row.total span:last-child{color:var(--gold-2)}
-  .rut-calc .note{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:14px}
-  .rut-calc h3{font-size:1rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2);margin-bottom:12px;font-weight:600}
+  .rut-calc .note{font-size:.76rem;color:rgba(255,255,255,.5);margin-top:8px}
 
   /* Process */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;counter-reset:s}
+  .process{background:var(--cream)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
   .step{text-align:center;padding:10px 20px;position:relative}
-  .step .circle{width:84px;height:84px;margin:0 auto 22px;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center;font:700 1.6rem Poppins,sans-serif;color:var(--navy);background:#fff;position:relative;z-index:1}
+  .step .circle{width:84px;height:84px;margin:0 auto 22px;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center;font:700 1.6rem Poppins,sans-serif;color:var(--navy);background:#fff;position:relative;z-index:1;box-shadow:var(--shadow-sm)}
   .step:not(:last-child)::after{content:"";position:absolute;top:52px;left:calc(50% + 50px);right:calc(-50% + 50px);border-top:1.5px dashed var(--gold)}
   .step h3{font-size:1.2rem;margin-bottom:8px}
   .step p{color:var(--muted);font-size:.96rem}
 
   /* Contact */
-  .contact{background:var(--cream)}
-  .contact-cards{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:24px}
-  .cc{border-radius:24px;padding:44px 36px;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;transition:.35s;position:relative;overflow:hidden}
-  .cc:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
-  .cc .ic{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,var(--navy),var(--navy-3));display:grid;place-items:center;margin-bottom:26px}
-  .cc .ic svg{width:26px;height:26px;stroke:var(--gold-2)}
-  .cc small{font-size:.76rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-3)}
-  .cc h3{font-size:1.55rem;margin:10px 0 10px;overflow-wrap:anywhere}
-  .cc p{color:var(--muted);font-size:.95rem;margin-bottom:30px;flex:1}
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:stretch}
+  .contact-media{position:relative;border-radius:28px;overflow:hidden;min-height:420px;box-shadow:var(--shadow)}
+  .contact-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .contact-media .quote{position:absolute;left:24px;right:24px;bottom:24px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:18px;padding:20px 22px;font-size:.95rem;color:var(--ink);box-shadow:var(--shadow-sm)}
+  .contact-media .quote b{font-family:Poppins,sans-serif;display:block;margin-bottom:4px}
+  .contact-side{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-content:start}
+  .cc{border-radius:22px;padding:30px 28px;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;transition:.35s;position:relative;overflow:hidden}
+  .cc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+  .cc .ic{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--navy-3));display:grid;place-items:center;margin-bottom:20px}
+  .cc .ic svg{width:24px;height:24px;stroke:var(--gold-2)}
+  .cc small{font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-3)}
+  .cc h3{font-size:1.35rem;margin:8px 0 8px;overflow-wrap:anywhere}
+  .cc p{color:var(--muted);font-size:.93rem;margin-bottom:22px;flex:1}
   .cc .btn{align-self:flex-start}
-  .cc.featured{background:linear-gradient(160deg,var(--navy),var(--navy-3));color:#fff;border:0}
-  .cc.featured::after{content:"";position:absolute;right:-90px;bottom:-90px;width:240px;height:240px;border-radius:50%;border:36px solid rgba(201,162,74,.1);pointer-events:none}
-  .cc.featured .ic{background:rgba(201,162,74,.16)}
+  .cc.featured{grid-column:1/-1;background:linear-gradient(140deg,var(--navy),var(--navy-3));color:#fff;border:0;display:grid;grid-template-columns:auto 1fr auto;gap:0 22px;align-items:center}
+  .cc.featured .ic{background:rgba(201,162,74,.16);margin:0}
   .cc.featured small{color:var(--gold-2)}
-  .cc.featured h3{font-size:2.1rem}
-  .cc.featured p{color:rgba(255,255,255,.7)}
-  .btn-outline{border:1.5px solid var(--navy);color:var(--navy)}
-  .btn-outline:hover{background:var(--navy);color:#fff}
-  .hours{list-style:none;display:grid;gap:0;margin-top:6px}
-  .hours li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+  .cc.featured h3{font-size:2rem;margin:4px 0 2px}
+  .cc.featured p{color:rgba(255,255,255,.7);margin:0}
+  .cc.featured::after{content:"";position:absolute;right:-80px;bottom:-110px;width:240px;height:240px;border-radius:50%;border:34px solid rgba(201,162,74,.1);pointer-events:none}
+  .cc.featured .btn{position:relative;z-index:1}
+  .hours{list-style:none}
+  .hours li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.93rem}
   .hours li span:last-child{font-weight:600;color:var(--navy)}
   .hours li:last-child{border:0}
-  .area{display:flex;align-items:center;gap:10px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-weight:600;font-size:.95rem}
+  .area{display:flex;align-items:center;gap:10px;margin-top:12px;padding-top:14px;border-top:1px solid var(--line);font-weight:600;font-size:.93rem}
   .area svg{width:20px;height:20px;stroke:var(--gold-3);flex:none}
-  .contact-note{margin-top:28px;display:flex;align-items:center;gap:18px;padding:22px 30px;border-radius:18px;background:#fff;border:1px dashed var(--gold);color:var(--muted);font-size:.96rem}
-  .contact-note svg{flex:none;width:26px;height:26px;stroke:var(--gold-3)}
+  .contact-note{grid-column:1/-1;display:flex;align-items:center;gap:16px;padding:18px 24px;border-radius:16px;background:var(--cream);border:1px dashed var(--gold);color:var(--muted);font-size:.93rem}
+  .contact-note svg{flex:none;width:24px;height:24px;stroke:var(--gold-3)}
   .contact-note b{color:var(--navy)}
 
   /* Footer */
@@ -173,34 +194,55 @@
   footer a:hover{color:var(--gold-2)}
   .foot-brand p{margin-top:16px;max-width:320px}
   .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:26px;font-size:.84rem}
+  .credit{font-size:.75rem;opacity:.5}
 
   /* Reveal */
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
   .reveal.in{opacity:1;transform:none}
 
   /* Responsive */
-  @media (max-width:1000px){
-    .hero-inner{grid-template-columns:1fr;padding:130px 0 180px}
-    .rut-badge{width:190px;height:190px;justify-self:start}
-    .rut-badge b{font-size:2rem}
+  @media (max-width:1050px){
     .services-grid{grid-template-columns:1fr 1fr}
-    .why-grid,.rut-box,.contact-cards{grid-template-columns:1fr}
-    .why-grid{gap:40px}
-    .trust .container{grid-template-columns:1fr 1fr}
+    .why-grid,.contact-grid{grid-template-columns:1fr}
+    .why-grid{gap:50px}
+    .why-media img{aspect-ratio:16/11}
+    .why-badge{right:16px;bottom:16px}
+    .stats .container,.trust .container{grid-template-columns:1fr 1fr}
+    .stat:nth-child(3){border-left:0}
+    .stat:nth-child(n+3){border-top:1px solid rgba(255,255,255,.12)}
+    .trust-item{justify-content:flex-start}
+    .rut-banner{grid-template-columns:1fr;padding:44px 44px 44px 220px}
     .foot-grid{grid-template-columns:1fr 1fr}
     .nav-links{display:none}
     .burger{display:block}
     .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:24px 20px;gap:18px;border-top:1px solid rgba(255,255,255,.1)}
+    .contact-media{min-height:320px}
   }
-  @media (max-width:640px){
-    .section{padding:80px 0}
-    .services-grid,.features,.steps,.fg,.foot-grid{grid-template-columns:1fr}
+  @media (max-width:680px){
+    .section{padding:76px 0}
+    .services-grid,.features,.steps,.foot-grid,.contact-side{grid-template-columns:1fr}
     .step::after{display:none}
-    .hero-stats{gap:26px}
     .nav .btn{display:none}
-    .rut-text,.rut-calc,.cc{padding:40px 26px}
-    .contact-note{flex-direction:column;align-items:flex-start;padding:22px 24px}
-    .trust .container{grid-template-columns:1fr}
+    .hero{min-height:auto}
+    .hero::before{background:linear-gradient(180deg,rgba(10,22,48,.55) 0%,rgba(13,27,54,.66) 55%,rgba(13,27,54,.88) 100%)}
+    .hero-inner{padding:130px 0 70px}
+    .stat{padding:20px 12px;gap:12px}
+    .stat svg{width:28px;height:28px}
+    .stat strong{font-size:1.3rem}
+    .stat span{font-size:.78rem}
+    .trust .container{grid-template-columns:1fr 1fr;gap:16px}
+    .trust-item{font-size:.85rem;gap:10px}
+    .trust-item svg{width:28px;height:28px}
+    .rut-wrap{padding-bottom:76px}
+    .rut-banner{padding:120px 26px 30px;text-align:left}
+    .coin{left:26px;top:26px;transform:none;width:110px;height:110px}
+    .coin b{font-size:1.4rem}.coin em{font-size:1.15rem}.coin small{font-size:.75rem}
+    .rut-banner{padding-top:156px}
+    .cc.featured{grid-template-columns:1fr;gap:14px}
+    .cc.featured h3{font-size:1.7rem}
+    .cc{padding:26px 22px}
+    .contact-note{flex-direction:column;align-items:flex-start}
+    .brand{font-size:1.35rem}
   }
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
@@ -242,39 +284,9 @@
 </header>
 
 <section class="hero" id="top">
-  <div class="stars"></div>
-  <!-- Göteborg night skyline with Älvsborgsbron -->
-  <svg class="skyline" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <defs>
-      <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#13264a"/><stop offset="1" stop-color="#0a1630"/></linearGradient>
-      <linearGradient id="goldline" x1="0" x2="1"><stop offset="0" stop-color="#c9a24a" stop-opacity="0"/><stop offset=".5" stop-color="#e3c578"/><stop offset="1" stop-color="#c9a24a" stop-opacity="0"/></linearGradient>
-    </defs>
-    <!-- bridge -->
-    <g stroke="#3a5488" fill="none" stroke-width="3">
-      <path d="M980 70v150M1000 70v150M1260 70v150M1280 70v150" stroke-width="6"/>
-      <path d="M760 190Q880 185 990 72M990 72Q1130 190 1270 72M1270 72Q1360 150 1440 160" stroke-width="2.5"/>
-      <path d="M740 192h700" stroke-width="5"/>
-    </g>
-    <g fill="#e3c578">
-      <circle cx="800" cy="188" r="2"/><circle cx="850" cy="188" r="2"/><circle cx="900" cy="188" r="2"/><circle cx="950" cy="188" r="2"/><circle cx="1050" cy="188" r="2"/><circle cx="1100" cy="188" r="2"/><circle cx="1150" cy="188" r="2"/><circle cx="1200" cy="188" r="2"/><circle cx="1330" cy="188" r="2"/><circle cx="1390" cy="188" r="2"/>
-    </g>
-    <!-- buildings -->
-    <g fill="#0f1e3d">
-      <path d="M0 230V200h40v-15h30v20h40v-30h25v35h50v-20h35v25h60v-40h20v40h45v-18h40v18h55v-28h30v28h50v-12h40v12h60v-22h40v22h60v40z"/>
-      <path d="M560 230v-80l8-30 8 30v80zM600 230v-70l6-28 6 28v70z"/>
-    </g>
-    <g fill="#e3c578" opacity=".8">
-      <rect x="50" y="205" width="4" height="5"/><rect x="85" y="200" width="4" height="5"/><rect x="125" y="190" width="4" height="5"/><rect x="190" y="210" width="4" height="5"/><rect x="260" y="200" width="4" height="5"/><rect x="290" y="210" width="4" height="5"/><rect x="345" y="213" width="4" height="5"/><rect x="410" y="210" width="4" height="5"/><rect x="470" y="212" width="4" height="5"/><rect x="530" y="214" width="4" height="5"/><rect x="566" y="170" width="3" height="5"/><rect x="650" y="215" width="4" height="5"/><rect x="700" y="215" width="4" height="5"/>
-    </g>
-    <rect y="228" width="1440" height="72" fill="url(#water)"/>
-    <rect y="228" width="1440" height="1.5" fill="url(#goldline)"/>
-    <g fill="#e3c578" opacity=".35">
-      <rect x="48" y="240" width="8" height="2"/><rect x="122" y="250" width="10" height="2"/><rect x="258" y="244" width="8" height="2"/><rect x="408" y="256" width="10" height="2"/><rect x="564" y="246" width="6" height="2"/><rect x="845" y="242" width="12" height="2"/><rect x="1095" y="252" width="12" height="2"/><rect x="1195" y="244" width="10" height="2"/>
-    </g>
-  </svg>
-
-  <div class="container hero-inner">
-    <div class="reveal">
+  <img class="hero-bg" src="images/hero.jpg" alt="" fetchpriority="high">
+  <div class="container">
+    <div class="hero-inner">
       <span class="eyebrow" data-i18n="hero.eyebrow">Städservice i Göteborg</span>
       <h1><span data-i18n="hero.title1">Ett skinande rent hem.</span><br><span class="gold-text" data-i18n="hero.title2">Utan att lyfta ett finger.</span></h1>
       <p class="lead" data-i18n="hero.lead">Professionell städning för hem och företag i Göteborg och omnejd. Noggrant, pålitligt och alltid med RUT-avdrag för privatpersoner.</p>
@@ -283,28 +295,20 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="#tjanster" class="btn btn-ghost" data-i18n="hero.cta2">Våra tjänster</a>
       </div>
-      <div class="hero-stats">
-        <div><strong>6</strong><span data-i18n="hero.s1">städtjänster</span></div>
-        <div><strong>50%</strong><span data-i18n="hero.s2">RUT-avdrag</span></div>
-        <div><strong>100%</strong><span data-i18n="hero.s3">nöjd-kund-garanti</span></div>
-      </div>
-    </div>
-    <div class="rut-badge reveal" aria-hidden="true">
-      <div><b>RUT</b><small data-i18n="hero.badge">avdrag 50%</small><em>✓ <span data-i18n="hero.badge2">Vi fixar allt</span></em></div>
     </div>
   </div>
 </section>
 
-<div class="trust">
+<div class="stats">
   <div class="container">
-    <div class="trust-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><span data-i18n="trust.1">Fullt försäkrade</span></div>
-    <div class="trust-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 6v6l4 2"/></svg></div><span data-i18n="trust.2">Flexibla tider</span></div>
-    <div class="trust-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-5 5-9 16-9 0 11-4 16-9 16z"/><path d="M4 21c3-6 7-9 11-11"/></svg></div><span data-i18n="trust.3">Miljövänliga produkter</span></div>
-    <div class="trust-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5 2 7.5L12 16.5 5.5 21l2-7.5L2 9h7z"/></svg></div><span data-i18n="trust.4">Nöjd-kund-garanti</span></div>
+    <div class="stat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><div><strong>16 år</strong><span data-i18n="st.1">erfarenhet</span></div></div>
+    <div class="stat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg><div><strong>6</strong><span data-i18n="st.2">städtjänster</span></div></div>
+    <div class="stat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><div><strong>50%</strong><span data-i18n="st.3">RUT-avdrag</span></div></div>
+    <div class="stat"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5 2 7.5L12 16.5 5.5 21l2-7.5L2 9h7z"/></svg><div><strong>100%</strong><span data-i18n="st.4">nöjd-kund-garanti</span></div></div>
   </div>
 </div>
 
-<section class="section" id="tjanster">
+<section class="section services" id="tjanster">
   <div class="container">
     <div class="section-head center reveal">
       <span class="eyebrow" data-i18n="services.eyebrow">Våra tjänster</span>
@@ -312,109 +316,140 @@
       <p data-i18n="services.lead">Från veckostädning till byggstädning – vi levererar samma höga kvalitet varje gång.</p>
     </div>
     <div class="services-grid">
-      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
-        <h3 data-i18n="s1.t">Hemstädning</h3><p data-i18n="s1.d">Regelbunden städning varje vecka eller varannan vecka – samma städare, samma höga standard.</p></div>
-      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div>
-        <h3 data-i18n="s2.t">Flyttstädning</h3><p data-i18n="s2.d">Grundlig städning enligt mäklarstandard med besiktningsgaranti – lämna bostaden helt bekymmersfritt.</p></div>
-      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
-        <h3 data-i18n="s3.t">Kontorsstädning</h3><p data-i18n="s3.d">En ren och trivsam arbetsmiljö för personal och kunder – anpassat efter era tider.</p></div>
-      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/><path d="M19 16l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg></div>
-        <h3 data-i18n="s4.t">Storstädning</h3><p data-i18n="s4.d">Djupgående rengöring av hela hemmet – från lister och skåp till ugn och kyl.</p></div>
-      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M5 20V9l7-5 7 5v11"/><path d="M9 20v-5h6v5M9 11h.01M15 11h.01"/></svg></div>
-        <h3 data-i18n="s5.t">Byggstädning</h3><p data-i18n="s5.d">Effektiv städning efter renovering och nybyggnation – byggdamm och spill försvinner.</p></div>
-      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M4 12h16"/></svg></div>
-        <h3 data-i18n="s6.t">Fönsterputs</h3><p data-i18n="s6.d">Kristallklara fönster utan ränder – invändigt och utvändigt, inklusive karmar.</p></div>
+      <a href="#kontakt" class="card reveal"><div class="img"><img src="images/hemstadning.jpg" alt="" loading="lazy"></div><div class="body">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <div class="txt"><h3 data-i18n="s1.t">Hemstädning</h3><p data-i18n="s1.d">Regelbunden städning varje eller varannan vecka – samma städare, samma höga standard.</p></div>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+      <a href="#kontakt" class="card reveal"><div class="img"><img src="images/flyttstadning.jpg" alt="" loading="lazy"></div><div class="body">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h13v10H1zM14 9h4l4 4v3h-8z"/><circle cx="5.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg></div>
+        <div class="txt"><h3 data-i18n="s2.t">Flyttstädning</h3><p data-i18n="s2.d">Grundlig städning enligt mäklarstandard med besiktningsgaranti – lämna bostaden bekymmersfritt.</p></div>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+      <a href="#kontakt" class="card reveal"><div class="img"><img src="images/kontorsstadning.jpg" alt="" loading="lazy"></div><div class="body">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
+        <div class="txt"><h3 data-i18n="s3.t">Kontorsstädning</h3><p data-i18n="s3.d">En ren och trivsam arbetsmiljö för personal och kunder – anpassat efter era tider.</p></div>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+      <a href="#kontakt" class="card reveal"><div class="img"><img src="images/storstadning.jpg" alt="" loading="lazy"></div><div class="body">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/><path d="M19 16l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg></div>
+        <div class="txt"><h3 data-i18n="s4.t">Storstädning</h3><p data-i18n="s4.d">Djupgående rengöring av hela hemmet – från lister och skåp till ugn och kyl.</p></div>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+      <a href="#kontakt" class="card reveal"><div class="img"><img src="images/byggstadning.jpg" alt="" loading="lazy"></div><div class="body">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18a10 10 0 0 1 20 0z"/><path d="M10 8V5h4v3M2 18h20v2H2z"/></svg></div>
+        <div class="txt"><h3 data-i18n="s5.t">Byggstädning</h3><p data-i18n="s5.d">Effektiv städning efter renovering och nybyggnation – byggdamm och spill försvinner.</p></div>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+      <a href="#kontakt" class="card reveal"><div class="img"><img src="images/fonsterputs.jpg" alt="" loading="lazy"></div><div class="body">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M4 12h16"/></svg></div>
+        <div class="txt"><h3 data-i18n="s6.t">Fönsterputs</h3><p data-i18n="s6.d">Kristallklara fönster utan ränder – invändigt och utvändigt, inklusive karmar.</p></div>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
     </div>
   </div>
 </section>
 
-<section class="section why" id="varfor">
-  <div class="container why-grid">
-    <div class="section-head reveal" style="margin-bottom:0">
-      <span class="eyebrow" data-i18n="why.eyebrow">Varför StädMar</span>
-      <h2 data-i18n-html="why.title">Kvalitet du ser.<br><span class="gold-text">Trygghet du känner.</span></h2>
-      <p data-i18n="why.lead">Vi tror att ett rent hem ger mer tid till det som verkligen betyder något. Därför gör vi varje uppdrag med samma omsorg som om det vore vårt eget hem.</p>
-      <a href="#kontakt" class="btn btn-gold" style="margin-top:32px" data-i18n="why.cta">Boka städning</a>
-    </div>
-    <div class="features">
-      <div class="feature reveal"><span class="num">01</span><h3 data-i18n="f1.t">Noggrann personal</h3><p data-i18n="f1.d">Utbildade, pålitliga städare som tar ansvar för varje detalj.</p></div>
-      <div class="feature reveal"><span class="num">02</span><h3 data-i18n="f2.t">Fasta priser</h3><p data-i18n="f2.d">Tydlig offert i förväg – inga dolda avgifter eller överraskningar.</p></div>
-      <div class="feature reveal"><span class="num">03</span><h3 data-i18n="f3.t">Försäkrade</h3><p data-i18n="f3.d">Ansvarsförsäkring som ger dig full trygghet.</p></div>
-      <div class="feature reveal"><span class="num">04</span><h3 data-i18n="f4.t">Garanti</h3><p data-i18n="f4.d">Inte nöjd? Vi kommer tillbaka och åtgärdar kostnadsfritt.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section rut" id="rut">
+<div class="trust">
   <div class="container">
-    <div class="rut-box reveal">
-      <div class="rut-text">
-        <span class="eyebrow" data-i18n="rut.eyebrow">RUT-avdrag</span>
-        <h2 data-i18n="rut.title">Betala bara halva arbetskostnaden</h2>
-        <p data-i18n="rut.p1">Som privatperson har du rätt till RUT-avdrag på 50 % av arbetskostnaden för hemstädning, flyttstädning, storstädning och fönsterputs.</p>
-        <p data-i18n="rut.p2">Vi sköter all administration med Skatteverket – du ser avdraget direkt på fakturan.</p>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="trust.1">Fullt försäkrade</span></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="trust.2">Flexibla tider</span></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-5 5-9 16-9 0 11-4 16-9 16z"/><path d="M4 21c3-6 7-9 11-11"/></svg><span data-i18n="trust.3">Miljövänliga produkter</span></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><path d="M16 3.5a4 4 0 0 1 0 7.5M22 21v-1a6 6 0 0 0-4-5.6"/></svg><span data-i18n="trust.4">Nöjd-kund-garanti</span></div>
+  </div>
+</div>
+
+<section class="section" id="varfor">
+  <div class="container why-grid">
+    <div class="why-media reveal">
+      <img src="images/varfor.jpg" alt="" loading="lazy">
+      <div class="why-badge"><b>16</b><span data-i18n-html="why.badge">års erfarenhet<br>av städning</span></div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="why.eyebrow">Varför StädMar</span>
+      <h2 style="font-size:clamp(2rem,4vw,2.7rem);margin:14px 0 16px;letter-spacing:-.02em" data-i18n-html="why.title">Kvalitet du ser.<br><span class="gold-text">Trygghet du känner.</span></h2>
+      <p style="color:var(--muted);font-size:1.04rem" data-i18n="why.lead">Vi tror att ett rent hem ger mer tid till det som verkligen betyder något. Därför gör vi varje uppdrag med samma omsorg som om det vore vårt eget hem.</p>
+      <div class="features">
+        <div class="feature"><span class="num">01</span><h3 data-i18n="f1.t">Noggrann personal</h3><p data-i18n="f1.d">Utbildade, pålitliga städare som tar ansvar för varje detalj.</p></div>
+        <div class="feature"><span class="num">02</span><h3 data-i18n="f2.t">Fasta priser</h3><p data-i18n="f2.d">Tydlig offert i förväg – inga dolda avgifter eller överraskningar.</p></div>
+        <div class="feature"><span class="num">03</span><h3 data-i18n="f3.t">Försäkrade</h3><p data-i18n="f3.d">Ansvarsförsäkring som ger dig full trygghet.</p></div>
+        <div class="feature"><span class="num">04</span><h3 data-i18n="f4.t">Garanti</h3><p data-i18n="f4.d">Inte nöjd? Vi kommer tillbaka och åtgärdar kostnadsfritt.</p></div>
+      </div>
+      <a href="#kontakt" class="btn btn-gold" style="margin-top:30px" data-i18n="why.cta">Boka städning</a>
+    </div>
+  </div>
+</section>
+
+<div class="rut-wrap" id="rut">
+  <div class="container">
+    <div class="rut-banner reveal">
+      <div class="coin"><div><b>RUT</b><small data-i18n="rut.coin">avdrag</small><em>50%</em></div></div>
+      <div>
+        <h2 data-i18n="rut.title">RUT-avdrag – spara 50 % på arbetskostnaden</h2>
+        <p data-i18n="rut.p1">Som privatperson får du 50 % avdrag på arbetskostnaden för hemstädning, flyttstädning, storstädning och fönsterputs. Vi sköter all administration med Skatteverket – du ser avdraget direkt på fakturan.</p>
       </div>
       <div class="rut-calc">
-        <h3 data-i18n="rut.ex">Exempel</h3>
         <div class="row"><span data-i18n="rut.r1">Arbetskostnad</span><span>2 000 kr</span></div>
         <div class="row"><span data-i18n="rut.r2">RUT-avdrag (50 %)</span><span>− 1 000 kr</span></div>
         <div class="row total"><span data-i18n="rut.r3">Du betalar</span><span>1 000 kr</span></div>
-        <p class="note" data-i18n="rut.note">Gäller upp till 75 000 kr per person och år enligt Skatteverkets regler.</p>
+        <p class="note" data-i18n="rut.note">Upp till 75 000 kr per person och år enligt Skatteverkets regler.</p>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="section">
+<section class="section process">
   <div class="container">
     <div class="section-head center reveal">
       <span class="eyebrow" data-i18n="proc.eyebrow">Så går det till</span>
       <h2 data-i18n="proc.title">Enkelt från start till skinande rent</h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="circle">1</div><h3 data-i18n="p1.t">Kontakta oss</h3><p data-i18n="p1.d">Ring, mejla eller fyll i formuläret – vi svarar snabbt.</p></div>
+      <div class="step reveal"><div class="circle">1</div><h3 data-i18n="p1.t">Kontakta oss</h3><p data-i18n="p1.d">Ring eller mejla oss – vi svarar snabbt.</p></div>
       <div class="step reveal"><div class="circle">2</div><h3 data-i18n="p2.t">Få en offert</h3><p data-i18n="p2.d">Du får ett tydligt fast pris anpassat efter dina behov.</p></div>
       <div class="step reveal"><div class="circle">3</div><h3 data-i18n="p3.t">Njut av resultatet</h3><p data-i18n="p3.d">Vi städar – du kommer hem till ett skinande rent hem.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section contact" id="kontakt">
+<section class="section" id="kontakt">
   <div class="container">
     <div class="section-head center reveal">
       <span class="eyebrow" data-i18n="c.eyebrow">Kontakt</span>
       <h2 data-i18n="c.title">Begär en kostnadsfri offert</h2>
       <p data-i18n="c.lead">Ring eller mejla oss – vi ger dig ett fast pris och hjälper dig gärna med alla frågor.</p>
     </div>
-    <div class="contact-cards">
-      <div class="cc featured reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
-        <small data-i18n="c.phoneL">Ring oss</small>
-        <h3>073-414 64 20</h3>
-        <p data-i18n="c.phoneD">Snabbaste vägen till en offert. Vi svarar under våra öppettider.</p>
-        <a href="tel:+46734146420" class="btn btn-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="c.call">Ring nu</span></a>
+    <div class="contact-grid">
+      <div class="contact-media reveal">
+        <img src="images/kontakt.jpg" alt="" loading="lazy">
+        <div class="quote"><b data-i18n="c.qt">Vi tar hand om städningen.</b><span data-i18n="c.qd">Du får mer tid för det som betyder något.</span></div>
       </div>
-      <div class="cc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
-        <small data-i18n="c.emailL">Mejla oss</small>
-        <h3>info@stadmar.se</h3>
-        <p data-i18n="c.emailD">Skicka din förfrågan när det passar dig – vi återkommer med ett prisförslag.</p>
-        <a href="mailto:info@stadmar.se" data-mail class="btn btn-outline"><span data-i18n="c.write">Skriv till oss</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="contact-side">
+        <div class="cc featured reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div>
+            <small data-i18n="c.phoneL">Ring oss</small>
+            <h3>073-414 64 20</h3>
+            <p data-i18n="c.phoneD">Snabbaste vägen till en offert.</p>
+          </div>
+          <a href="tel:+46734146420" class="btn btn-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="c.call">Ring nu</span></a>
+        </div>
+        <div class="cc reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+          <small data-i18n="c.emailL">Mejla oss</small>
+          <h3>info@stadmar.se</h3>
+          <p data-i18n="c.emailD">Skicka din förfrågan när det passar dig – vi återkommer med ett prisförslag.</p>
+          <a href="mailto:info@stadmar.se" data-mail class="btn btn-outline"><span data-i18n="c.write">Skriv till oss</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="cc reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <small data-i18n="c.hours">Öppettider</small>
+          <ul class="hours" style="margin-top:8px">
+            <li><span data-i18n="c.h1">Måndag–fredag</span><span>07–18</span></li>
+            <li><span data-i18n="c.h2">Lördag</span><span>09–15</span></li>
+            <li><span data-i18n="c.h3">Söndag</span><span data-i18n="c.closed">Stängt</span></li>
+          </ul>
+          <div class="area"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-6-8-13a8 8 0 0 1 16 0c0 7-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg><span data-i18n="c.areaV">Göteborg och omnejd</span></div>
+        </div>
+        <div class="contact-note reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>
+          <span data-i18n-html="c.tip"><b>Tips för snabb offert:</b> berätta vilken tjänst du önskar, bostadens storlek i kvm, adress och önskat datum.</span>
+        </div>
       </div>
-      <div class="cc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-        <small data-i18n="c.hours">Öppettider</small>
-        <ul class="hours">
-          <li><span data-i18n="c.h1">Måndag–fredag</span><span>07–18</span></li>
-          <li><span data-i18n="c.h2">Lördag</span><span>09–15</span></li>
-          <li><span data-i18n="c.h3">Söndag</span><span data-i18n="c.closed">Stängt</span></li>
-        </ul>
-        <div class="area"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-6-8-13a8 8 0 0 1 16 0c0 7-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg><span data-i18n="c.areaV">Göteborg och omnejd</span></div>
-      </div>
-    </div>
-    <div class="contact-note reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>
-      <span data-i18n-html="c.tip"><b>Tips för snabb offert:</b> berätta vilken tjänst du önskar, bostadens storlek i kvm, adress och önskat datum.</span>
     </div>
   </div>
 </section>
@@ -435,6 +470,7 @@
       <span>© <span id="year"></span> StädMar. <span data-i18n="foot.rights">Alla rättigheter förbehållna.</span></span>
       <span data-i18n="foot.legal">Särskilt företagsnamn under PAWPOL AB</span>
     </div>
+    <p class="credit" style="margin-top:14px" data-i18n="foot.photos">Foton: Unsplash</p>
   </div>
 </footer>
 
@@ -444,8 +480,8 @@ const T = {
     "nav.services":"Services","nav.why":"Why us","nav.rut":"RUT deduction","nav.contact":"Contact",
     "hero.eyebrow":"Cleaning services in Gothenburg","hero.title1":"A spotless home.","hero.title2":"Without lifting a finger.",
     "hero.lead":"Professional cleaning for homes and businesses in Gothenburg and the surrounding area. Thorough, reliable and always with the RUT tax deduction for private customers.",
-    "hero.cta":"Request a free quote","hero.cta2":"Our services","hero.s1":"cleaning services","hero.s2":"RUT deduction","hero.s3":"satisfaction guarantee",
-    "hero.badge":"deduction 50%","hero.badge2":"We handle it",
+    "hero.cta":"Request a free quote","hero.cta2":"Our services",
+    "st.1":"of experience","st.2":"cleaning services","st.3":"RUT deduction","st.4":"satisfaction guarantee",
     "trust.1":"Fully insured","trust.2":"Flexible scheduling","trust.3":"Eco-friendly products","trust.4":"Satisfaction guarantee",
     "services.eyebrow":"Our services","services.title":"Cleaning for every need","services.lead":"From weekly cleaning to post-construction cleaning – the same high quality, every time.",
     "s1.t":"Home cleaning","s1.d":"Regular weekly or bi-weekly cleaning – the same cleaner, the same high standard.",
@@ -455,45 +491,42 @@ const T = {
     "s5.t":"Construction cleaning","s5.d":"Efficient cleaning after renovation and new builds – dust and debris gone.",
     "s6.t":"Window cleaning","s6.d":"Crystal-clear, streak-free windows – inside and out, frames included.",
     "why.eyebrow":"Why StädMar","why.title":'Quality you can see.<br><span class="gold-text">Peace of mind you can feel.</span>',
+    "why.badge":"years of cleaning<br>experience",
     "why.lead":"We believe a clean home gives you more time for what truly matters. That's why we treat every job with the same care as if it were our own home.","why.cta":"Book a cleaning",
     "f1.t":"Meticulous staff","f1.d":"Trained, trustworthy cleaners who take care of every detail.",
     "f2.t":"Fixed prices","f2.d":"A clear quote up front – no hidden fees or surprises.",
     "f3.t":"Insured","f3.d":"Liability insurance that gives you complete peace of mind.",
     "f4.t":"Guarantee","f4.d":"Not satisfied? We'll come back and fix it free of charge.",
-    "rut.eyebrow":"RUT deduction","rut.title":"Pay only half the labour cost",
-    "rut.p1":"As a private individual in Sweden you are entitled to the RUT deduction – 50% off the labour cost for home cleaning, move-out cleaning, deep cleaning and window cleaning.",
-    "rut.p2":"We handle all the paperwork with the Swedish Tax Agency – the deduction appears directly on your invoice.",
-    "rut.ex":"Example","rut.r1":"Labour cost","rut.r2":"RUT deduction (50%)","rut.r3":"You pay","rut.note":"Applies up to SEK 75,000 per person per year under Swedish Tax Agency rules.",
+    "rut.coin":"deduction","rut.title":"RUT deduction – save 50% on labour costs",
+    "rut.p1":"As a private individual in Sweden you get a 50% deduction on the labour cost for home cleaning, move-out cleaning, deep cleaning and window cleaning. We handle all the paperwork with the Swedish Tax Agency – the deduction appears directly on your invoice.",
+    "rut.r1":"Labour cost","rut.r2":"RUT deduction (50%)","rut.r3":"You pay","rut.note":"Up to SEK 75,000 per person per year under Swedish Tax Agency rules.",
     "proc.eyebrow":"How it works","proc.title":"Simple from start to spotless",
-    "p1.t":"Contact us","p1.d":"Call, email or fill in the form – we reply quickly.",
+    "p1.t":"Contact us","p1.d":"Call or email us – we reply quickly.",
     "p2.t":"Get a quote","p2.d":"You receive a clear, fixed price tailored to your needs.",
     "p3.t":"Enjoy the result","p3.d":"We clean – you come home to a sparkling home.",
     "c.eyebrow":"Contact","c.title":"Request a free quote","c.lead":"Call or email us – we'll give you a fixed price and are happy to answer any questions.",
-    "c.phoneL":"Call us","c.phoneD":"The fastest way to a quote. We answer during our opening hours.","c.call":"Call now",
+    "c.qt":"We take care of the cleaning.","c.qd":"You get more time for what matters.",
+    "c.phoneL":"Call us","c.phoneD":"The fastest way to a quote.","c.call":"Call now",
     "c.emailL":"Email us","c.emailD":"Send your request whenever it suits you – we'll get back to you with a quote.","c.write":"Write to us",
     "c.hours":"Opening hours","c.h1":"Monday–Friday","c.h2":"Saturday","c.h3":"Sunday","c.closed":"Closed","c.areaV":"Gothenburg and surrounding area",
     "c.tip":"<b>Tip for a quick quote:</b> tell us which service you need, the size of your home in m², the address and your preferred date.",
     "foot.desc":"Premium cleaning services in Gothenburg and the surrounding area. With RUT deduction for private customers.",
-    "foot.rights":"All rights reserved.","foot.legal":"Secondary business name of PAWPOL AB"
+    "foot.rights":"All rights reserved.","foot.legal":"Secondary business name of PAWPOL AB","foot.photos":"Photos: Unsplash"
   }
 };
 // Capture Swedish defaults from the markup
 T.sv = {};
 document.querySelectorAll('[data-i18n]').forEach(el => T.sv[el.dataset.i18n] ??= el.textContent);
 document.querySelectorAll('[data-i18n-html]').forEach(el => T.sv[el.dataset.i18nHtml] ??= el.innerHTML);
-document.querySelectorAll('[data-i18n-ph]').forEach(el => T.sv[el.dataset.i18nPh] ??= el.placeholder);
 
-let current = 'sv';
 function setLang(lang){
-  current = lang;
   const d = T[lang];
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach(el => { if (d[el.dataset.i18n]) el.textContent = d[el.dataset.i18n]; });
   document.querySelectorAll('[data-i18n-html]').forEach(el => { if (d[el.dataset.i18nHtml]) el.innerHTML = d[el.dataset.i18nHtml]; });
-  document.querySelectorAll('[data-i18n-ph]').forEach(el => { if (d[el.dataset.i18nPh]) el.placeholder = d[el.dataset.i18nPh]; });
   document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
-  document.title = lang === 'sv' ? 'StädMar – Städservice i Göteborg' : 'StädMar – Cleaning Services in Gothenburg';
   document.querySelectorAll('a[data-mail]').forEach(a => a.href = 'mailto:info@stadmar.se?subject=' + encodeURIComponent(lang === 'sv' ? 'Offertförfrågan' : 'Quote request'));
+  document.title = lang === 'sv' ? 'StädMar – Städservice i Göteborg' : 'StädMar – Cleaning Services in Gothenburg';
   try { localStorage.setItem('stadmar-lang', lang); } catch(e){}
 }
 document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
@@ -511,7 +544,6 @@ links.querySelectorAll('a').forEach(a => a.onclick = () => links.classList.remov
 // Reveal on scroll
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
