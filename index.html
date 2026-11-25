@@ -53,8 +53,8 @@
   /* Header */
   header{position:fixed;inset:0 0 auto;z-index:50;transition:.3s;background:linear-gradient(180deg,rgba(13,27,54,.75),rgba(13,27,54,0))}
   header.scrolled{background:rgba(13,27,54,.95);backdrop-filter:blur(14px);box-shadow:0 8px 30px -12px rgba(0,0,0,.4)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:92px;transition:.3s}
-  header.scrolled .nav{height:80px}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:104px;transition:.3s}
+  header.scrolled .nav{height:96px}
   .brand{display:inline-flex;font-size:1.7rem;font-weight:800;color:#fff;letter-spacing:-.02em}
   .foot-brand .brand{font-size:2rem}
   .brand .mar{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -81,9 +81,9 @@
   @keyframes zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
   .hero::before{content:"";position:absolute;inset:0;z-index:1;
     background:linear-gradient(90deg,rgba(10,22,48,.94) 0%,rgba(13,27,54,.85) 32%,rgba(13,27,54,.45) 58%,rgba(13,27,54,.05) 82%)}
-  .hero-inner{position:relative;z-index:2;padding:120px 0 70px;max-width:720px}
+  .hero-inner{position:relative;z-index:2;padding:136px 0 70px;max-width:720px}
   @media (min-width:681px) and (max-height:820px){
-    .hero-inner{padding:100px 0 40px}
+    .hero-inner{padding:114px 0 24px}
     .hero h1{font-size:clamp(2.2rem,4.2vw,3.2rem);margin:16px 0 16px}
     .hero p.lead{font-size:1.04rem;margin-bottom:26px}
   }
@@ -244,7 +244,7 @@
     .btn{padding:12px 20px;font-size:.86rem}
 
     /* Header */
-    .nav{height:64px} header.scrolled .nav{height:60px}
+    .nav{height:72px} header.scrolled .nav{height:70px}
     .nav .btn{display:none}
     .brand{font-size:1.15rem}
     .brand-sub{font-size:.52rem;margin-top:4px;gap:5px}
@@ -254,7 +254,7 @@
     .hero{min-height:auto!important}
     .hero-bg{object-position:78% 50%}
     .hero::before{background:linear-gradient(90deg,rgba(10,22,48,.95) 0%,rgba(13,27,54,.86) 48%,rgba(13,27,54,.35) 78%,rgba(13,27,54,.15) 100%)}
-    .hero-inner{padding:80px 0 20px;max-width:none}
+    .hero-inner{padding:88px 0 20px;max-width:none}
     .hero .eyebrow{font-size:.58rem;letter-spacing:.14em}
     .hero .eyebrow::after{content:"";width:22px;height:1.5px;background:var(--gold)}
     .hero h1{font-size:clamp(1.35rem,6.4vw,1.65rem);margin:10px 0 8px;letter-spacing:-.02em}
