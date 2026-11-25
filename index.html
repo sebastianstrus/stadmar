@@ -61,8 +61,8 @@
   .brand-text{display:flex;flex-direction:column;line-height:1;padding-top:1.3em}
   .brand-name{position:relative;white-space:nowrap}
   .brand-roof{position:absolute;left:0;bottom:calc(100% - .14em);width:100%;height:auto;overflow:visible;pointer-events:none}
-  .brand-sub{display:flex;align-items:center;gap:6px;margin-top:5px;font:600 .62rem/1 Inter,sans-serif;letter-spacing:.14em;color:rgba(255,255,255,.88)}
-  .brand-sub::before,.brand-sub::after{content:"";flex:1;min-width:8px;height:1px;background:var(--gold)}
+  .brand-sub{display:flex;align-items:center;gap:.7em;margin-top:.45em;font:600 max(.26em,.62rem)/1 Poppins,sans-serif;letter-spacing:.12em;color:rgba(255,255,255,.92)}
+  .brand-sub::before,.brand-sub::after{content:"";flex:1;min-width:8px;height:max(1px,.09em);background:var(--gold)}
   .nav-links{display:flex;gap:34px;font-size:.93rem;font-weight:500;color:rgba(255,255,255,.88)}
   .nav-links a{position:relative;padding:6px 0}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--gold);transition:.25s}
@@ -364,12 +364,12 @@
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
-    <linearGradient id="lg-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ecd291"/><stop offset=".5" stop-color="#c9a24a"/><stop offset="1" stop-color="#a8832f"/></linearGradient>
+    <linearGradient id="lg-gold" gradientUnits="userSpaceOnUse" x1="80" y1="60" x2="580" y2="340"><stop offset="0" stop-color="#ecd291"/><stop offset=".5" stop-color="#c9a24a"/><stop offset="1" stop-color="#a8832f"/></linearGradient>
     <g id="logo-roof">
-      <path d="M-13 47 C-9 33 28 24.5 80 16 C36 29.5 2 36.5 -13 47 Z" fill="url(#lg-gold)"/>
-      <path d="M-10 35.5 L36 2.4 L62.5 22.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-      <g fill="url(#lg-gold)"><rect x="31" y="13.8" width="4.6" height="4.6"/><rect x="36.6" y="13.8" width="4.6" height="4.6"/><rect x="31" y="19.4" width="4.6" height="4.6"/><rect x="36.6" y="19.4" width="4.6" height="4.6"/></g>
-      <path d="M67 2.5 Q67 11 75.5 11 Q67 11 67 19.5 Q67 11 58.5 11 Q67 11 67 2.5 Z" fill="url(#lg-gold)"/>
+      <path d="M90 336L89 334L88 332L86 329L85 327L84 324L84 320L83 315L83 310L83 305L84 300L84 297L85 293L87 289L89 286L91 282L93 278L96 274L98 270L101 267L104 263L107 260L111 257L115 254L119 251L123 249L127 246L131 244L134 241L138 239L142 237L146 235L150 233L154 231L158 229L161 228L165 226L169 225L172 224L176 222L181 221L186 219L191 218L197 216L204 215L210 214L217 213L225 212L233 212L241 212L250 212L260 212L270 212L280 213L290 213L300 214L308 215L316 216L324 217L332 218L340 219L347 220L354 221L362 222L370 222L380 223L393 224L408 224L423 225L438 225L450 225L459 225L465 224L470 224L475 223L481 222L489 221L497 220L506 218L515 216L522 214L530 210L537 207L544 204L550 200L555 196L559 191L562 187L565 182L566 178L568 175L569 170L570 166L570 162L570 159L570 155L570 152L569 148L568 145L567 143L566 141L564 141L564 143L564 146L563 149L563 152L562 155L561 158L560 161L559 164L558 167L556 170L554 173L552 176L551 179L548 182L545 184L541 187L536 190L530 193L524 196L518 198L510 201L502 203L494 205L486 206L479 208L473 209L468 210L464 211L458 212L450 212L438 212L424 213L408 213L393 213L380 213L370 213L362 213L355 213L348 212L340 212L332 212L325 211L317 211L309 210L300 210L291 210L280 210L270 209L260 209L250 210L241 209L233 210L225 210L217 210L210 210L203 211L196 212L190 213L185 214L179 215L175 216L170 217L166 218L163 219L159 220L154 222L150 223L146 224L142 226L138 228L134 230L130 232L125 234L121 237L117 239L113 242L108 245L104 248L100 252L96 256L92 260L89 264L86 268L84 272L81 276L79 280L77 285L75 289L74 294L72 300L73 305L74 311L75 316L76 322L78 326L80 330L82 332L85 334L87 336L88 336Z" fill="url(#lg-gold)"/>
+      <path d="M84 246L333 59L481 179L333 86Z" fill="currentColor"/>
+      <path d="M307 128h25v25h-25zM338 128h25v25h-25zM307 159h25v25h-25zM338 159h25v25h-25z" fill="url(#lg-gold)"/>
+      <path d="M497 66Q501 106 544 110Q501 114 497 160Q493 114 452 110Q493 106 497 66Z" fill="url(#lg-gold)"/>
     </g>
   </defs>
 </svg>
@@ -378,7 +378,7 @@
   <div class="container nav">
     <a href="#top" class="brand" aria-label="StädMar i Göteborg">
       <span class="brand-text">
-        <span class="brand-name"><svg class="brand-roof" viewBox="0 0 120 36" aria-hidden="true"><use href="#logo-roof"/></svg>Städ<span class="mar">Mar</span></span>
+        <span class="brand-name"><svg class="brand-roof" viewBox="138 50 649 195" aria-hidden="true"><use href="#logo-roof"/></svg>Städ<span class="mar">Mar</span></span>
         <span class="brand-sub">i Göteborg</span>
       </span>
     </a>
@@ -581,7 +581,7 @@
       <div class="foot-brand">
         <a href="#top" class="brand" aria-label="StädMar i Göteborg">
           <span class="brand-text">
-            <span class="brand-name"><svg class="brand-roof" viewBox="0 0 120 36" aria-hidden="true"><use href="#logo-roof"/></svg>Städ<span class="mar">Mar</span></span>
+            <span class="brand-name"><svg class="brand-roof" viewBox="138 50 649 195" aria-hidden="true"><use href="#logo-roof"/></svg>Städ<span class="mar">Mar</span></span>
             <span class="brand-sub">i Göteborg</span>
           </span>
         </a>
