@@ -20,6 +20,7 @@
     --ink:#0d1b36; --muted:#5b6478; --line:#ebe6da;
     --cream:#faf7f1; --sand:#f4efe4; --white:#fff;
     --gold-grad:linear-gradient(135deg,#ecd291 0%,#c9a24a 48%,#a8832f 100%);
+    --stats-h:116px;
     --radius:18px; --shadow:0 22px 50px -22px rgba(13,27,54,.28); --shadow-sm:0 8px 24px -12px rgba(13,27,54,.18);
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -70,12 +71,17 @@
   .burger svg{width:28px;height:28px}
 
   /* Hero */
-  .hero{position:relative;min-height:min(92vh,860px);display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--navy)}
+  .hero{position:relative;min-height:calc(100vh - var(--stats-h));min-height:calc(100svh - var(--stats-h));display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--navy)}
   .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%;animation:zoom 18s ease-out both}
   @keyframes zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
   .hero::before{content:"";position:absolute;inset:0;z-index:1;
     background:linear-gradient(90deg,rgba(10,22,48,.94) 0%,rgba(13,27,54,.85) 32%,rgba(13,27,54,.45) 58%,rgba(13,27,54,.05) 82%)}
-  .hero-inner{position:relative;z-index:2;padding:150px 0 120px;max-width:720px}
+  .hero-inner{position:relative;z-index:2;padding:120px 0 70px;max-width:720px}
+  @media (min-width:681px) and (max-height:820px){
+    .hero-inner{padding:100px 0 40px}
+    .hero h1{font-size:clamp(2.2rem,4.2vw,3.2rem);margin:16px 0 16px}
+    .hero p.lead{font-size:1.04rem;margin-bottom:26px}
+  }
   .hero .eyebrow{color:var(--gold-2)}
   .hero h1{font-size:clamp(2.4rem,5vw,3.9rem);font-weight:700;letter-spacing:-.03em;margin:22px 0 22px}
   .hero p.lead{font-size:1.14rem;color:rgba(255,255,255,.85);max-width:520px;margin-bottom:36px}
@@ -207,9 +213,10 @@
     .why-grid{gap:50px}
     .why-media img{aspect-ratio:16/11}
     .why-badge{right:16px;bottom:16px}
-    .stats .container,.trust .container{grid-template-columns:1fr 1fr}
-    .stat:nth-child(3){border-left:0}
-    .stat:nth-child(n+3){border-top:1px solid rgba(255,255,255,.12)}
+    .trust .container{grid-template-columns:1fr 1fr}
+    .stat{padding:28px 14px;gap:12px}
+    .stat svg{width:28px;height:28px}
+    .stat strong{font-size:1.35rem}
     .trust-item{justify-content:flex-start}
     .rut-banner{grid-template-columns:1fr;padding:44px 44px 44px 220px}
     .foot-grid{grid-template-columns:1fr 1fr}
@@ -223,9 +230,12 @@
     .services-grid,.features,.steps,.foot-grid,.contact-side{grid-template-columns:1fr}
     .step::after{display:none}
     .nav .btn{display:none}
-    .hero{min-height:auto}
+    .hero{min-height:auto!important}
     .hero::before{background:linear-gradient(180deg,rgba(10,22,48,.55) 0%,rgba(13,27,54,.66) 55%,rgba(13,27,54,.88) 100%)}
     .hero-inner{padding:130px 0 70px}
+    .stats .container{grid-template-columns:1fr 1fr}
+    .stat:nth-child(3){border-left:0}
+    .stat:nth-child(n+3){border-top:1px solid rgba(255,255,255,.12)}
     .stat{padding:20px 12px;gap:12px}
     .stat svg{width:28px;height:28px}
     .stat strong{font-size:1.3rem}
@@ -532,6 +542,11 @@ function setLang(lang){
 document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
 let saved = null; try { saved = localStorage.getItem('stadmar-lang'); } catch(e){}
 setLang(saved === 'en' ? 'en' : 'sv');
+
+// Keep hero + stats bar within the first screen
+const statsEl = document.querySelector('.stats');
+const fitHero = () => document.documentElement.style.setProperty('--stats-h', statsEl.offsetHeight + 'px');
+fitHero(); addEventListener('resize', fitHero); document.fonts && document.fonts.ready.then(fitHero);
 
 // Header + menu
 const header = document.getElementById('header');
