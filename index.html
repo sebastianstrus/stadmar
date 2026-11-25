@@ -662,7 +662,8 @@ setLang(saved === 'en' ? 'en' : 'sv');
 
 // Keep hero + stats bar within the first screen
 const statsEl = document.querySelector('.stats');
-const fitHero = () => document.documentElement.style.setProperty('--stats-h', statsEl.offsetHeight + 'px');
+// floor + 1px overlap so the bar always reaches the bottom edge (no sub-pixel gap)
+const fitHero = () => document.documentElement.style.setProperty('--stats-h', (Math.floor(statsEl.getBoundingClientRect().height) - 1) + 'px');
 fitHero(); addEventListener('resize', fitHero); document.fonts && document.fonts.ready.then(fitHero);
 
 // Header + menu
